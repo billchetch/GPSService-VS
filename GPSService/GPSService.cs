@@ -67,12 +67,12 @@ namespace GPSService
             _gpsMgr?.StopRecording();
         }
 
-        public override void AddCommandHelp(List<string> commandHelp)
+        public override void AddCommandHelp()
         {
-            base.AddCommandHelp(commandHelp);
+            AddCommandHelp();
 
-            commandHelp.Add("status: Get status of service");
-            commandHelp.Add("(p)osition: Get position at for a certain <date?>. Leave blank for latest position. Date is in mysql format.");
+            AddCommandHelp("status", "Get status of service");
+            AddCommandHelp("(p)osition", "Get position at for a certain <date?>. Leave blank for latest position. Date is in mysql format.");
         }
 
         public override void HandleClientError(Connection cnn, Exception e)
