@@ -12,7 +12,7 @@ using System.Globalization;
 
 namespace GPSService
 {
-    class GPSService : TCPMessagingClient
+    public class GPSService : TCPMessagingClient
     {
         private GPSDB _gpsdb;
         private GPSManager _gpsMgr;
