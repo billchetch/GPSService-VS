@@ -69,7 +69,7 @@ namespace GPSService
 
         public override void AddCommandHelp()
         {
-            AddCommandHelp();
+            base.AddCommandHelp();
 
             AddCommandHelp("status", "Get status of service");
             AddCommandHelp("(p)osition", "Get position at for a certain <date?>. Leave blank for latest position. Date is in mysql format.");
