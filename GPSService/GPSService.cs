@@ -42,6 +42,7 @@ namespace GPSService
                 String device = Properties.Settings.Default.GPSDevice;
                 _gpsMgr = new GPSManager(device, _gpsdb);
                 _gpsMgr.Tracing = Tracing;
+                _gpsMgr.LogPositionWait = 60 * 1000; //record position every minute
                 Tracing?.TraceEvent(TraceEventType.Information, 0, "Created GPS manager for device {0}", device);
 
 
