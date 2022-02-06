@@ -18,7 +18,8 @@ namespace GPSService
         private GPSManager _gpsMgr;
         private Timer _gpstimer;
 
-        public GPSService() : base("GPSS", "GPSSClient", "GPSService", "GPSServiceLog")
+        
+        public GPSService(bool test = false) : base("GPSS", test ? null : "GPSSClient", "GPSService", test ? null : "GPSServiceLog")
         {
             try
             {

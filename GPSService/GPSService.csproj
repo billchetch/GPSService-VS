@@ -60,9 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GPSService.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="GPSService.cs" />
     <Compile Include="GPSSInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
