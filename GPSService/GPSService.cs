@@ -26,6 +26,7 @@ namespace GPSService
                 Tracing?.TraceEvent(TraceEventType.Information, 0, "Connecting to GPS database...");
                 _gpsdb = GPSDB.Create(Properties.Settings.Default);
                 Tracing?.TraceEvent(TraceEventType.Information, 0, "Connected to GPS database");
+                Settings = Properties.Settings.Default;
             }
             catch (Exception e)
             {
