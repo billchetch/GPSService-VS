@@ -76,6 +76,7 @@ namespace GPSService
 
             AddCommandHelp("status", "Get status of service");
             AddCommandHelp("(p)osition", "Get position at for a certain <date?>. Leave blank for latest position. Date is in mysql format.");
+            AddCommandHelp("(s)attelites", "Get latest sattelite info");
         }
 
         public override void HandleClientError(Connection cnn, Exception e)
@@ -140,7 +141,22 @@ namespace GPSService
                     response.AddValue("DateTimeUTC", dt.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss"));
                     response.AddValue("NowUTC", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                     break;
-                    
+
+                case "s":
+                case "satellites":
+                    if (_gpsMgr == null)
+                    {
+                        throw new Exception("GPS Manager has not been created");
+                    }
+
+                    int sidx = 0;
+                    foreach (var sat in _gpsMgr.Satellites) 
+                    {
+                        response.AddValue("Sattelite" + sidx, sat.ToString());
+                    }
+                    break;
+
+
             }
 
             return true;
