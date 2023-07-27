@@ -76,7 +76,7 @@ namespace GPSService
 
             AddCommandHelp("status", "Get status of service");
             AddCommandHelp("(p)osition", "Get position at for a certain <date?>. Leave blank for latest position. Date is in mysql format.");
-            AddCommandHelp("(s)attelites", "Get latest sattelite info");
+            AddCommandHelp("(sat)telites", "Get latest sattelite info");
         }
 
         public override void HandleClientError(Connection cnn, Exception e)
@@ -142,7 +142,7 @@ namespace GPSService
                     response.AddValue("NowUTC", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                     break;
 
-                case "s":
+                case "sat":
                 case "satellites":
                     if (_gpsMgr == null)
                     {
